@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Caitlin DeShazo-Couchot",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.79,
+      "left": 129.23,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -92.68,
+      "left": 187.71,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 226.77, "left": 121.36, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -71.3,
+      "left": 120.23,
+      "attrs": { "color": "white" }
+    }
+  ],
+  "connections": [
+    [ "pot1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "uno:A0", "pot1:SIG", "green", [ "v0" ] ],
+    [ "uno:GND.3", "pot1:GND", "black", [ "v0" ] ],
+    [ "btn1:2.l", "uno:GND.1", "orange", [ "h0" ] ],
+    [ "r1:1", "led1:A", "orange", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "orange", [ "h-81.24", "v114.79" ] ],
+    [ "uno:1", "uno:2", "green", [ "v0" ] ],
+    [ "btn1:1.r", "uno:3", "orange", [ "h40.43", "v67.3" ] ],
+    [ "r1:2", "uno:2", "orange", [ "v0" ] ]
+  ]
+}
